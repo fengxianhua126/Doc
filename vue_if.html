@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="gbk">
+<title>Vue.js 条件与循环</title>
+<script src="vue.min.js"></script>
+</head>
+<body>
+<div id="app">
+	<p v-if="seen">现在你看到我了</p>
+    <template v-if="ok">
+      <h1>菜鸟教程</h1>
+      <p>学的不仅是技术，更是梦想！</p>
+      <p>哈哈哈，打字辛苦啊！！！</p>
+    </template>
+	
+	
+	<div v-if="Math.random() > 0.5">
+      Sorry
+    </div>
+    <div v-else>
+      Not sorry
+    </div>
+	
+	<div id="app">
+    <div v-if="type === 'A'">
+      A
+    </div>
+    <div v-else-if="type === 'B'">
+      B
+    </div>
+    <div v-else-if="type === 'C'">
+      C
+    </div>
+    <div v-else>
+      Not A/B/C
+    </div>
+</div>
+</div>
+
+<script>
+new Vue({
+  el: '#app',
+  data: {
+    seen: true,
+    ok: true
+	,type: 'C'
+  }
+})
+</script>
+</body>
+</html>
