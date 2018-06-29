@@ -1,0 +1,28 @@
+
+Ctrl+Shift+R  打开资源搜索框
+Ctrl+Shift+T  打开类型搜索框
+ctrl+shift+o 导入（import）依赖包
+Ctrl+Shift+X 把当前选中的文本全部变为大写
+Ctrl+Shift+Y 把当前选中的文本全部变为小写
+Ctrl+Shift+/  xml文件在光标位置添加注释行,ctrl+shift+\取消注释（需要先选中）
+
+Ctrl+Alt+↓ 复制当前行到下一行（复制增加）
+Ctrl+Alt+↑ 复制当前行到上一行（复制增加）
+
+Alt+Enter 快捷打开buildpath,显示当前选择资源（工程,or 文件 or文件）的属性
+Alt+Shift+R 重命名
+Alt+Shift+J 方法添加注释
+Alt+Shift+L 光标定位在调用的方法后，自动添加返回值
+
+alt+/  提示
+
+Ctrl+O 显示全部方法
+Ctrl+T 快速显示当前类的继承结构
+Ctrl+Q 定位到最后编辑的地方
+Ctrl+/ 注释当前行,再按则取消注释
+Ctrl+W 关闭当前Editer
+Ctrl+M 全屏或退出
+Ctrl+F 当前文件查找
+ctrl+H 全局查找
+Ctrl+↑ 上滚行
+Ctrl +↓ 下滚行
