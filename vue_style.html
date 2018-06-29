@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="gbk">
+<title>Vue.js 样式绑定</title>
+<script src="vue.min.js"></script>
+<style>
+.active {
+	width: 100px;
+	height: 100px;
+	background: green;
+}
+.text-danger {
+	background: red;
+}
+</style>
+</head>
+<body>
+<div id="app">
+  <p>1</p>
+  <div v-bind:class="{ active: isActive }"></div>
+  
+  <p>2</p>
+  <div class="static"
+     v-bind:class="{ active: isActive, 'text-danger': hasError }">
+  </div>
+  
+  <p>3</p>
+  <div v-bind:class="classObject"></div>
+  
+  <p>4</p>
+   <div v-bind:class="classObject2"></div>
+   
+   <p>5</p>
+   <div v-bind:class="[activeClass, errorClass]"></div>
+   
+   <p>6</p>
+   <div v-bind:class="[errorClass ,isActive ? activeClass : '']"></div>
+   
+   <p>7</p>
+   <div v-bind:style="{ color: activeColor, fontSize: fontSize + 'px' }">菜鸟教程</div>
+   
+   <p>8</p>
+    <div v-bind:style="styleObject">菜鸟教程</div>
+	
+	 <p>9</p>
+	<div v-bind:style="[baseStyles, overridingStyles]">菜鸟教程</div>
+</div>
+<script>
+new Vue({
+  el: '#app',
+  data: {
+    isActive: true
+	,hasError: true
+	,error: null
+	,classObject: {
+      active: true,
+      'text-danger': true
+    }
+	,activeClass: 'active',
+    errorClass: 'text-danger'
+	,activeColor: 'green',
+	fontSize: 30
+	,styleObject:{
+		color: 'blue',
+		fontSize: '30px'
+	}
+	,baseStyles: {
+      color: 'green',
+      fontSize: '30px'
+    },
+	overridingStyles: {
+      'font-weight': 'bold'
+    }
+  },
+  computed: {
+    classObject2: function () {
+      return {
+        active: this.isActive && !this.error,
+        'text-danger': this.error && this.error.type === 'fatal',
+      }
+    }
+  }
+})
+</script>
+</body>
+</html>
