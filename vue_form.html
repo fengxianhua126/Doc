@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="gbk">
+<title>Vue.js 模板语法</title>
+<script src="vue.min.js"></script>
+</head>
+<body>
+<div id="app">
+   <p>1.v-html</p>
+   <div v-html="message"></div>
+   <br>
+   
+   <p>2.v-model v-bind:id(或 class 或 href 等)</p>
+   <label for="r1">修改颜色</label><input type="checkbox" v-model="class1" id="r1">
+  <br>
+  <div v-bind:class="{'class1': class1}"><!-- class1为true时，div 的class才有 class1;为false,没有class1这个class-->
+    directiva v-bind:class
+  </div>
+  
+  <p>3.表达式</p>
+   {{5+5}}<br>
+    {{ ok ? 'YES' : 'NO' }}<br>
+    {{ message.split('').reverse().join('') }}
+	<div v-bind:id="'list-' + id">菜鸟教程</div>
+	
+	<p>4.v—if</p>
+	<p v-if="seen">现在你看到我了</p>
+	<pre><a v-bind:href="url">菜鸟教程</a></pre>
+	
+	<p>5.用户输入v-model</p>
+	<input v-model="message">
+	
+	<p>6.翻转字符串</p>
+	<button v-on:click="reverseMessage">反转字符串</button>
+	
+	<p>7.过滤器</p>
+	{{ message | capitalize }}
+	
+	<p>8.事件</>
+	<a v-on:click="doSomething"><input type="button" value="点击弹出"></a>
+</div>
+
+<script>
+new Vue({
+  el: '#app',
+  data: {
+	class1: false
+    ,ok: true,
+    message: 'runoob',
+    id : 1
+	,seen: true
+	,url: 'http://www.runoob.com'
+  },
+  methods: {
+    reverseMessage: function () {
+      this.message = this.message.split('').reverse().join('')
+    },
+	doSomething:function(){
+		alert("你点击了");
+	}
+  },
+  filters: {
+    capitalize: function (value) {
+      if (!value) return ''
+      value = value.toString()
+      return value.charAt(0).toUpperCase() + value.slice(1)
+    }
+  }
+})
+</script>
+</body>
+</html>
